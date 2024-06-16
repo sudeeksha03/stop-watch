@@ -1,0 +1,73 @@
+#root{
+  background-color: red;
+}
+
+.App {
+  text-align: center;
+  width:35%;
+  background-color: rgb(241, 188, 169);
+  font-family: sans;
+  margin: auto;
+  margin-top: 5%;
+  padding-bottom:2%;
+  border-radius: 20px;
+  box-shadow: rgb(249, 125, 1) 0px -2px 2px 0px, rgba(244, 217, 67, 0.971) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.title{
+  display:flex;
+  width:100%;
+  justify-content: space-around;
+}
+
+.title > h2{
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:50px;
+  cursor: pointer;
+  color:rgb(51, 42, 42);
+  margin-top:2%;
+} 
+
+.LineVertical{
+  border:none;
+  border-style:inset;
+}
+.title > h2:hover{
+  color:rgb(255, 255, 255)
+}
+
+.timer,.stopWatch{
+  color:rgb(185, 86, 29);
+  font-weight: 900;
+  margin-right: 2%;
+  
+}
+
+.stopWatch{
+  color:rgb(203, 45, 45);
+  margin-right: 3%;
+}
+
+.timer:hover{
+  color:rgb(222, 82, 0);
+}
+
+.stopWatch:hover{
+  color:rgb(229, 0, 0);
+}
+
+button{
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover{
+  box-shadow: rgb(81, 25, 25) 0px -2px 2px 0px, rgba(64, 21, 21, 0.971) 0px 4px 6px -1px, transparent 0px 1px 0px inset;
+}
+
+kbd{
+  font-weight: 100;
+}
