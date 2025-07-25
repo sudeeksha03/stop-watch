@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch with Laps</title>
+  <!-- Use the correct stylesheet filename and add a funky Google Font -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+    <h1>Stopwatch</h1>
+    <div class="timer" id="timer">00:00:00</div>
+    
 
-	<h1 id="myH1">Stopwatch</h1>
+    <div class="buttons">
+      <button id="startStop">Start</button>
+      <button id="reset">Reset</button>
+      <button id="lap">Lap</button>
+      <button id="themeToggle" title="Change Theme">🎨</button>
+      <select id="themeSelect" title="Select Theme" style="margin-left:10px; border-radius:8px; padding:6px 10px; font-size:15px;">
+        <option value="theme-cute">Cute</option>
+        <option value="theme-dark">Dark</option>
+        <option value="theme-funky">Funky</option>
+        <option value="theme-mint">Mint</option>
+        <option value="theme-sunset">Sunset</option>
+      </select>
+    </div>
 
-	<div id="container">
-		<div id="display">
-			00:00:00:00
-		</div>
-		<div id="controls">
-			<button id="startBtn" onclick="start()">Start</button>
-			<button id="stopBtn" onclick="stop()">Stop</button>
-			<button id="resetBtn" onclick="reset()">Reset</button>
-		</div>
+    <ul id="laps"></ul>
+  </div>
 
-	</div>
+  <audio id="beep">
+    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+  </audio>
 
-
-	<script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
