@@ -1,57 +1,270 @@
-body{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: hsl(64, 100%, 72%);
-	}
-	#myH1{
-		font-size: 4rem;
-		font-family: "Arial", sans-serif;
-		color: hsl(0, 0%, 25%);
-	}
-	#container{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 30px;
-		border: 5px solid;
-		border-radius: 50px;
-		background-color: rgb(154, 103, 230);
-	}
-	#display{
-		font-size: 5rem;
-		font-family: monospace;
-		font-weight: bold;
-		color: hsl(0, 0%, 0%, 0.75);
-		margin-bottom: 25px;
-	}
-	#controls button{
-		font-size: 1.5rem;
-		font-weight: bold;
-		padding: 10px 20px;
-		margin: 5px;
-		min-width: 125px;
-		border: none;
-		border-radius: 10px;
-		cursor: pointer;
-		color: rgb(255, 250, 255);
-		transition: background-color 0.5s ease;
-	}
-	#startBtn{
-		background-color: hsl(139, 77%, 43%);
-	}
-	#startBtn:hover{
-		background-color: hsl(139, 100%, 33%);
-	}
-	#stopBtn{
-		background-color: hsl(10, 92%, 44%);
-	}
-	#stopBtn:hover{
-		background-color: hsl(10, 100%, 34%);
-	}
-	#resetBtn{
-		background-color: hsl(239, 49%, 47%);
-	}
-	#resetBtn:hover{
-		background-color: hsl(239, 100%, 37%);
-	}
+/* Theme: Cute (default) */
+body.theme-cute {
+  background: linear-gradient(135deg, #fceabb 0%, #f8b6b8 100%);
+  color: #222;
+}
+body.theme-cute .container {
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid #f8b6b8;
+}
+body.theme-cute h1 {
+  color: #f8b6b8;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #fceabb;
+}
+body.theme-cute .timer {
+  color: #a18cd1;
+  text-shadow: 0 2px 8px #f8b6b8aa;
+}
+body.theme-cute ul li {
+  background: #fceabb;
+  color: #a18cd1;
+}
+
+/* Theme: Dark */
+body.theme-dark {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  color: #fff;
+}
+body.theme-dark .container {
+  background: rgba(40, 40, 60, 0.95);
+  border: 2px solid #444;
+}
+body.theme-dark h1 {
+  color: #fff;
+  text-shadow: 1px 1px 0 #232526, 2px 2px 0 #444;
+}
+body.theme-dark .timer {
+  color: #fffd82;
+  text-shadow: 0 2px 8px #23252677;
+}
+body.theme-dark ul li {
+  background: #444;
+  color: #fff;
+}
+
+/* Theme: Funky */
+body.theme-funky {
+  background: linear-gradient(135deg, #ff6fd8 0%, #3813c2 100%);
+  color: #fff;
+}
+body.theme-funky .container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 4px solid #ff6fd8;
+}
+body.theme-funky h1 {
+  color: #ff6fd8;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 #3813c2;
+}
+body.theme-funky .timer {
+  color: #3813c2;
+  text-shadow: 1px 1px 8px #fff7, 0 0 2px #ff6fd8;
+}
+body.theme-funky ul li {
+  background: linear-gradient(90deg, #ffb6b9 0%, #f7b801 100%);
+  color: #3813c2;
+}
+
+/* Theme: Mint */
+body.theme-mint {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #222;
+}
+body.theme-mint .container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #a8edea;
+}
+body.theme-mint h1 {
+  color: #5eead4;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #a8edea;
+}
+body.theme-mint .timer {
+  color: #38b2ac;
+  text-shadow: 0 2px 8px #a8edea99;
+}
+body.theme-mint ul li {
+  background: #a8edea;
+  color: #38b2ac;
+}
+
+/* Theme: Sunset */
+body.theme-sunset {
+  background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+  color: #fff;
+}
+body.theme-sunset .container {
+  background: rgba(255, 255, 255, 0.90);
+  border: 2px solid #ff9966;
+}
+body.theme-sunset h1 {
+  color: #ff5e62;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #ff9966;
+}
+body.theme-sunset .timer {
+  color: #ff9966;
+  text-shadow: 0 2px 8px #ff5e6299;
+}
+body.theme-sunset ul li {
+  background: #ff9966;
+  color: #fff;
+}
+
+/* Style the theme selector dropdown */
+#themeSelect {
+  margin-left: 10px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  outline: none;
+  transition: border 0.2s;
+}
+#themeSelect:focus {
+  border: 1.5px solid #a18cd1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Luckiest+Guy&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', 'Luckiest Guy', cursive, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fceabb 0%, #f8b6b8 100%);
+  transition: background 0.5s ease;
+  color: #222;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #fff;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: 32px 26px 26px 26px;
+  width: 340px;
+  text-align: center;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.13);
+  border: 2px solid #f8b6b8;
+  transition: background 0.3s, border 0.3s;
+}
+
+body.dark .container {
+  background: rgba(180, 160, 210, 0.92);
+  border: 2px solid #fbc2eb;
+}
+
+
+h1 {
+  font-family: 'Luckiest Guy', 'Orbitron', cursive, sans-serif;
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #f8b6b8;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #fceabb;
+}
+
+body.dark h1 {
+  color: #fff;
+  text-shadow: 1px 1px 0 #a18cd1, 2px 2px 0 #fbc2eb;
+}
+
+
+.timer {
+  font-size: 44px;
+  font-family: 'Orbitron', 'Luckiest Guy', monospace, sans-serif;
+  margin-bottom: 20px;
+  color: #a18cd1;
+  background: none;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #f8b6b8aa;
+}
+
+body.dark .timer {
+  color: #fff;
+  background: none;
+  text-shadow: 0 2px 8px #a18cd1aa;
+}
+
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #f8b6b8;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 2px 6px #f8b6b855;
+  transition: transform 0.2s, background 0.3s, color 0.3s;
+  font-family: 'Orbitron', 'Luckiest Guy', cursive, sans-serif;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: #fbc2eb;
+  color: #a18cd1;
+}
+
+#themeToggle {
+  background: #fceabb;
+  color: #f8b6b8;
+  font-size: 20px;
+  border: 2px solid #f8b6b8;
+  box-shadow: 0 2px 6px #fceabb55;
+}
+
+#themeToggle:hover {
+  background: #f8b6b8;
+  color: #fff;
+  border: 2px solid #fbc2eb;
+}
+
+
+ul {
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+  margin-top: 10px;
+  padding: 0 8px;
+}
+
+ul li {
+  background: #fceabb;
+  padding: 6px 14px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #a18cd1;
+  font-family: 'Orbitron', 'Luckiest Guy', cursive, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 1px 3px #f8b6b855;
+}
+
+body.dark ul li {
+  background: #a18cd1;
+  color: #fff;
+  box-shadow: 0 1px 3px #a18cd155;
+}
+
